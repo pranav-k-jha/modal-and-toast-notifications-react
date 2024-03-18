@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# Notification System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This is a notification system designed to display toast and modal notifications in a React application. The system allows any part of the app to dispatch notifications with various dismissal actions, such as automatic dismissal after a set time, manual dismissal via a button, and optional dismissal by clicking on a button that triggers a function returning a promise.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Components
 
-## Expanding the ESLint configuration
+### NotificationCenter
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This component serves as the main container for displaying notifications. It accepts `Toast` and `Modal` components as children.
 
-- Configure the top-level `parserOptions` property like this:
+### Toast Component
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+The `Toast` component displays a simple notification message with options for dismissal. It supports the following features:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Automatic dismissal after a specified timeout.
+- Pausing the dismissal timer when the mouse hovers over the notification.
+- Manual dismissal by clicking the "X" button at the top right corner.
+- Optional dismissal by clicking the "Dismiss" button, triggering a function returning a promise.
+
+### Modal Component
+
+The `Modal` component displays a modal notification message with dismissal options similar to the `Toast` component. It supports the following features:
+
+- Automatic dismissal after a specified timeout.
+- Pausing the dismissal timer when the mouse hovers over the notification.
+- Manual dismissal by clicking the "X" button at the top right corner.
+- Optional dismissal by clicking the "Dismiss" button, triggering a function returning a promise.
