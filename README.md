@@ -4,6 +4,11 @@
 
 This is a notification system designed to display toast and modal notifications in a React application. The system allows any part of the app to dispatch notifications with various dismissal actions, such as automatic dismissal after a set time, manual dismissal via a button, and optional dismissal by clicking on a button that triggers a function returning a promise.
 
+## Technologies Used
+
+- React
+- TypeScript
+
 ## Components
 
 ### NotificationCenter
